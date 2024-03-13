@@ -1,0 +1,118 @@
+<div class="profileback">
+<div class="container form">
+    <div class="card">
+        <div class="card-header head">
+            <h3 class="text-center">Apply form</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="profile" (ngSubmit)="save()" class="row g-3">
+                <div class="text-center text-danger">{{message}}</div>
+
+                <div class="col-md-6">
+                    <label for="FirstName" class="form-label">First name</label>
+                    <input type="text" id="FirstName" class="form-control" formControlName="firstName"  />
+                    <div *ngIf="firstName && firstName.invalid && firstName.touched">
+                        <div class="text-danger">Invalid first name format</div>
+                    </div> 
+                </div>
+
+                
+                <div class="col-md-6">
+                    <label for="LastName" class="form-label">Last name</label>
+                    <input type="text" id="LastName" class="form-control" formControlName="LastName"  />
+                    <div *ngIf="LastName && LastName.invalid && LastName.touched">
+                        <div class="text-danger">Invalid Last name format</div>
+                    </div> 
+                </div>
+
+               
+                <div class="form-group">
+                    <label>Gender</label>
+                    <div>
+                      <div class="form-check form-check-inline">
+                        <input type="radio" id="maleRadio" class="form-check-input" value="Male" formControlName="Gender">
+                        <label class="form-check-label" for="maleRadio">Male</label>
+                      </div>
+                      
+                      <div class="form-check form-check-inline">
+                        <input type="radio" id="femaleRadio" class="form-check-input" value="Female" formControlName="Gender">
+                        <label class="form-check-label" for="femaleRadio">Female</label>
+                      </div>
+
+                      <div class="form-check form-check-inline">
+                        <input type="radio" id="otherRadio" class="form-check-input" value="other" formControlName="Gender">
+                        <label class="form-check-label" for="otherRadio">Other</label>
+                      </div>
+                    </div>
+                    <div *ngIf="Gender && Gender.invalid && Gender.touched">
+                        <div class="text-danger">gender is requried</div>
+                    </div>
+                  </div>
+
+              
+                <div class="col-md-12" style="display: none;" >
+                    <label for="Email" class="form-label">Email</label>
+                    <input type="text" id="Email" class="form-control" formControlName="Email"  />
+                    <div *ngIf="Email && Email.invalid && Email.touched">
+                        <div class="text-danger">Invalid Email format</div>
+                    </div>
+                </div>
+
+                
+                <div class="col-md-12">
+                    <label for="HighSchoolName" class="form-label">Hsc name</label>
+                    <input type="text" id="HighSchoolName" class="form-control" formControlName="HighSchoolName" />
+                    <div *ngIf="HighSchoolName && HighSchoolName.invalid && HighSchoolName.touched">
+                        <div class="text-danger">Invalid Hsc name format</div>
+                    </div> 
+                </div>
+
+                
+                <div class="col-md-12">
+                    <label for="HighSchoolGroup" class="form-label">Hsc Group</label>
+                    <select id="HighSchoolGroup" class="form-select" formControlName="HighSchoolGroup">
+                        <option value="Computer Science/arts">Computer science/arts</option>
+                        <option value="Computer Science/Maths">Computer science/maths</option>
+                        <option value="Biology">Biology</option>
+                    </select>
+                    <div *ngIf="HighSchoolGroup && HighSchoolGroup.invalid && HighSchoolGroup.touched">
+                        <div class="text-danger">Invalid hsc group format</div>
+                    </div>
+                </div>
+
+                
+                <div class="col-md-12">
+                    <label for="mark1" class="form-label">Hsc mark</label>
+                    <input type="text" id="mark1" class="form-control" formControlName="HighSchoolMark" />
+                    <div *ngIf="HighSchoolMark && HighSchoolMark.invalid && HighSchoolMark.touched">
+                        <div class="text-danger">Invalid hsc mark format</div>
+                    </div>
+                </div>
+
+                
+                <div class="col-md-12">
+                    <label for="SecondarySchoolName" class="form-label">Sslc name</label>
+                    <input type="text" id="SecondarySchoolName" class="form-control" formControlName="SecondarySchoolName" />
+                    <div *ngIf="SecondarySchoolName && SecondarySchoolName.invalid && SecondarySchoolName.touched">
+                        <div class="text-danger">Invalid sslc name format</div>
+                    </div>
+                </div>
+
+                
+                <div class="col-md-12">
+                    <label for="mark2" class="form-label">Sslc mark</label>
+                    <input type="text" id="mark2" class="form-control" formControlName="SecondarySchoolMark" />
+                    <div *ngIf="SecondarySchoolMark && SecondarySchoolMark.invalid && SecondarySchoolMark.touched">
+                        <div class="text-danger">Invalid sslc mark format</div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-12">
+                    <button type="submit" [disabled]="!profile.valid" class="btn btn-primary btn-block">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

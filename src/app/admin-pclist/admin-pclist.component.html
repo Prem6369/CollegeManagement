@@ -1,0 +1,36 @@
+<h4 class="text-center">PC programme</h4>
+<p>
+    <a routerLink="/AddPC" class="btn btn-primary add">Add Course</a>
+    <a routerLink="/Course" class="btn btn-primary back">back to course</a>
+
+</p>
+<div class="table-responsive">
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <thead class="text-center">
+            <tr>
+                <th>Program</th>
+                <th>Course code</th>
+                <th>Course name</th>
+                <th>Description</th>
+                <th>Duration</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr *ngFor="let course of PCList">
+                <td><span>{{course.program}}</span></td>
+                <td><span>{{course.courseid}}</span></td>
+                <td><span>{{course.coursename}}</span></td>
+                <td class="justify"><span>{{course.description}}</span></td>
+                <td><span>{{course.duration}}</span></td>
+                <td class="text-center">
+                    <a (click)="editug(course.courseid)" class="btn btn-outline-success">Edit</a>
+                    <a  class="btn btn-outline-danger" (click)="delete(course.courseid)">Delete</a>
+                  </td>
+                  
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

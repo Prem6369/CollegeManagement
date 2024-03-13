@@ -1,0 +1,39 @@
+<div class="space"></div>
+<h4 class="text-center space1">User List</h4>
+
+<div class="table-responsive">
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <thead class="text-center">
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Gender</th>
+                <th>Date of birth</th>
+                <th>Age</th>
+                <th>Phone number</th>
+                <th>State</th>
+                <th>City</th>
+                <th>Address</th>
+                <th>Email</th>
+
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr *ngFor="let student of data">
+                <td><span>{{student.firstName}}</span></td>
+                <td><span>{{student.lastName}}</span></td>
+                <td><span>{{student.gender}}</span></td>
+                <td><span>{{student.dateOfBirth | date:'dd-MM-yyyy'}}</span></td>
+                <td><span>{{student.age}}</span></td>
+                <td><span>{{student.phoneNumber}}</span></td>
+                <td><span>{{student.state}}</span></td>
+                <td><span>{{student.city}}</span></td>
+                <td><span>{{student.address}}</span></td>
+                <td><span>{{student.email}}</span></td>
+               
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

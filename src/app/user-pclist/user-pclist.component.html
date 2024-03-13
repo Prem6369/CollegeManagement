@@ -1,0 +1,32 @@
+<h4 class="text-center">professional programme</h4>
+<p>
+    <a routerLink="/usercourse" class="btn btn-primary back">backto Course</a>
+</p>
+<div class="table-responsive">       
+<div class="container ">
+    <table class="table table-bordered table-striped">
+        <thead class="text-center">
+            <tr>
+                <th>Program</th>
+                <th>Course code</th>
+                <th>Course name</th>
+                <th>Description</th>
+                <th>Duration</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr *ngFor="let course of pclist">
+                <td><span>{{course.program}}</span></td>
+                <td><span>{{course.courseid}}</span></td>
+                <td><span>{{course.coursename}}</span></td>
+                <td><span>{{course.description}}</span></td>
+                <td><span>{{course.duration}}</span></td>
+                <td class="text-center">
+                    <a class="btn btn-outline-success" (click)="applyForm(course.courseid,course.program,course.coursename)">Apply</a>
+                  </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

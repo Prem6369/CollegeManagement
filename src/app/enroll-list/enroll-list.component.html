@@ -1,0 +1,55 @@
+<h4 class="text-center">Enroll Student List</h4>
+<div class="table-responsive">      
+
+    <table class="table table-bordered table-striped">
+        <thead class="text-center">
+            <tr>
+                <th>Program</th>
+                <th>Course code</th>
+                <th>Course name</th>
+                <th>Full name</th>
+                <th>Gender</th>
+                <th>High school name</th>
+                <th>High school group</th>
+                <th>High school mark</th>
+                <th>Secondary school name</th>
+                <th>Secondary school mark</th>
+                <th>Community certificate</th>
+                <th>Photo</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr *ngFor="let student of students">
+                <td><span>{{student.program}}</span></td>
+                <td><span>{{student.courseid}}</span></td>
+                <td><span>{{student.coursename}}</span></td>
+                <td><span>{{student.FirstName}} {{student.LastName}}</span></td>
+                <td><span>{{student.Gender}}</span></td>
+                <td><span>{{student.HighSchoolName}}</span></td>
+                <td><span>{{student.HighSchoolGroup}}</span></td>
+                <td><span>{{student.HighSchoolMark}}</span></td>
+                <td><span>{{student.SecondarySchoolName}}</span></td>
+                <td><span>{{student.SecondarySchoolMark}}</span></td> 
+                <td><span> <a [href]="student.CommunityCertificate" download="Community.pdf">
+                    <button class="btn btn-success">view ceritificate</button>  
+                </a></span></td>
+                <td>
+                    <img [src]="student.Photo" alt="User Photo" class="rounded-photo" width="80" height="80">
+                  </td>
+
+                <td>
+                    <select (click)="onchange($event,student.id)" [(ngModel)]="student.Status">
+                      <option value="1" >Waiting</option>
+                      <option value="2" >Confirm</option>
+                      <option value="3" >Rejected</option>
+                    </select>
+                </td>
+                  
+
+                  
+            </tr>
+        </tbody>
+    </table>
+</div> 
+

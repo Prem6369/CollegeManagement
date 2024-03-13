@@ -1,0 +1,62 @@
+.row {
+    display: flex;
+    justify-content: space-around;
+}
+.h2{
+    text-align:center;
+    color:navy;
+
+}
+.welcome {
+    text-shadow: 2px 2px #c2c2d6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+    color: navy;
+}
+
+
+.card {
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 16px;
+    text-align:justify;
+}
+
+.card-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.card-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    text-decoration: none;
+}
+.text{
+    color:  rgb(7, 97, 67);
+    font-weight: 500;
+}

@@ -1,0 +1,44 @@
+<h4 class="text-center space">Status</h4>
+
+<div class="table-responsive space">
+  <div class="container">
+    <table class="table table-bordered table-striped">
+      <thead class="text-center">
+        <tr>
+          <th>Progarm</th>
+          <th>Course id</th>
+          <th>Course name</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let course of status">
+          <td>
+            <span>{{ course.program }}</span>
+          </td>
+          <td>
+            <span>{{ course.courseid }}</span>
+          </td>
+          <td>
+            <span>{{ course.coursename }}</span>
+          </td>
+          <td>
+            <span>{{ course.firstName }}</span>
+          </td>
+          <td>
+            <span>{{ course.email }}</span>
+          </td>
+          <td>
+            <span [ngSwitch]="course.status">
+              <span *ngSwitchCase="1">Waiting</span>
+              <span *ngSwitchCase="2">Confirm</span>
+              <span *ngSwitchCase="3">Rejected</span>
+            </span>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

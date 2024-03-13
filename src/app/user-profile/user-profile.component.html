@@ -1,0 +1,24 @@
+<div class=" space">
+  <h4 class="text-center">Profile</h4>
+
+  <div class="card-deck">
+    <div *ngFor="let course of profiles" class="card mb-4">
+      <img [src]="course.photo" alt="User Photo" class="card-img-top img-fluid" height="50" width="50">
+      <div class="card-body">
+        <h5 class="card-title">{{ course.firstName }} {{ course.lastName }}</h5>
+        <p class="card-text"><strong>Email:</strong> {{ course.email }}</p>
+        <p class="card-text"><strong>Gender:</strong> {{ course.gender }}</p> 
+        <!-- Add more card details as needed -->
+        <p class="card-text"><strong>Highschool name:</strong> {{ course.highSchoolName }}</p>
+        <p class="card-text"><strong>Highschool group:</strong> {{ course.highSchoolGroup }}</p>
+        <p class="card-text"><strong>Highschool mark:</strong> {{ course.highSchoolMark }}</p>
+        <p class="card-text"><strong>Secondaryschool name:</strong> {{ course.secondarySchoolName }}</p>
+        <p class="card-text"><strong>Secondaryschool mark:</strong> {{ course.secondarySchoolMark }}</p>
+        <p class="card-text"><strong>Community certificate:</strong> <a class="btn btn-success" [href]="course.communityCertificate"
+           download="Community.pdf">View Certificate</a></p>
+        <!-- Add more card details as needed -->
+        <button class="btn btn-success" (click)="editprofile()">Edit</button>
+      </div>
+    </div>
+  </div>
+</div>

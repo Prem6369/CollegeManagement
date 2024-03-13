@@ -1,0 +1,146 @@
+<div class="apply"> 
+<div class="container form">
+    <div class="card">
+        <div class="card-header head">
+            <h3 class="text-center">Apply Form</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="Applyuser" (ngSubmit)="Applyclick()" class="row g-3">
+                <div class="text-center text-danger">{{message}}</div>
+
+                <div class="col-md-12">
+                    <label for="Program" class="form-label">Program</label>
+                    <input type="text" id="Program" class="form-control" formControlName="Program" />
+
+                    <div *ngIf="Program && Program.invalid && Program.touched">
+                        <div class="text-danger">Invalid Program format</div>
+                    </div>
+
+                </div>
+
+                <!-- Course ID -->
+                <div class="col-md-12">
+                    <label for="Courseid" class="form-label">Course id</label>
+                    <input type="text" id="Courseid" class="form-control" formControlName="Courseid" />
+                    <div *ngIf="Courseid && Courseid.invalid && Courseid.touched">
+                        <div class="text-danger">Invalid Courseid format</div>
+                    </div>               
+                 </div>
+
+                <!-- Course Name -->
+                <div class="col-md-12">
+                    <label for="Coursename" class="form-label">Course ame</label>
+                    <input type="text" id="Coursename" class="form-control" formControlName="Coursename" />
+                    <div *ngIf="Coursename && Coursename.invalid && Coursename.touched">
+                        <div class="text-danger">Invalid Courseid format</div>
+                    </div> 
+                </div>
+
+                <!-- FirstName -->
+                <div class="col-md-6">
+                    <label for="FirstName" class="form-label">First name</label>
+                    <input type="text" id="FirstName" class="form-control" formControlName="firstName" [value]="firstname" />
+                    <div *ngIf="firstName && firstName.invalid && firstName.touched">
+                        <div class="text-danger">Invalid firstName format</div>
+                    </div>                
+                </div>
+
+                <!-- LastName -->
+                <div class="col-md-6">
+                    <label for="LastName" class="form-label">Last name</label>
+                    <input type="text" id="LastName" class="form-control" formControlName="LastName" [value]="lastName" />
+                    <div *ngIf="LastName && LastName.invalid && LastName.touched">
+                        <div class="text-danger">Invalid LastName format</div>
+                    </div>               
+                 </div>
+
+                <!-- Gender -->
+                <div class="col-md-12">
+                    <label for="Gender" class="form-label">Gender</label>
+                    <input type="text" id="Gender" class="form-control" formControlName="Gender" [value]="gender" />
+                    <div *ngIf="Gender && Gender.invalid && Gender.touched">
+                        <div class="text-danger">Invalid Gender format</div>
+                    </div>                
+                </div>
+
+                <!-- Email -->
+                <div class="col-md-12">
+                    <label for="Email" class="form-label">Email</label>
+                    <input type="text" id="Email" class="form-control" formControlName="Email" [value]="email" />
+                    <div *ngIf="Email && Email.invalid && Email.touched">
+                        <div class="text-danger">Invalid Email format</div>
+                    </div>                
+                </div>
+
+                <!-- High School Name -->
+                <div class="col-md-12">
+                    <label for="HighSchoolName" class="form-label">High school name</label>
+                    <input type="text" id="HighSchoolName" class="form-control" formControlName="HighSchoolName" />
+                    <div *ngIf="HighSchoolName && HighSchoolName.invalid && HighSchoolName.touched">
+                        <div class="text-danger">Invalid HSC format</div>
+                    </div>                
+                </div>
+
+                <!-- 12th Group -->
+                <div class="col-md-12">
+                    <label for="HighSchoolGroup" class="form-label">Hsc Group</label>
+                    <select id="HighSchoolGroup" class="form-select" formControlName="HighSchoolGroup">
+                        <option value="Computer Science/arts">Computer Science/arts</option>
+                        <option value="Computer Science/Maths">Computer Science/Maths</option>
+                        <option value="Biology">Biology</option>
+                    </select>
+                    <div *ngIf="HighSchoolGroup && HighSchoolGroup.invalid && HighSchoolGroup.touched">
+                        <div class="text-danger">Invalid HSC Group format</div>
+                    </div>               
+                 </div>
+
+                <!-- 12th Mark -->
+                <div class="col-md-12">
+                    <label for="mark1" class="form-label">Hsc mark</label>
+                    <input type="text" id="mark1" class="form-control" formControlName="HighSchoolMark" />
+                    <div *ngIf="HighSchoolMark && HighSchoolMark.invalid && HighSchoolMark.touched">
+                        <div class="text-danger">Invalid HSC Mark format</div>
+                    </div>
+                </div>
+
+                <!-- Secondary School Name -->
+                <div class="col-md-12">
+                    <label for="SecondarySchoolName" class="form-label">Sslc name</label>
+                    <input type="text" id="SecondarySchoolName" class="form-control" formControlName="SecondarySchoolName" />
+                    <div *ngIf="SecondarySchoolName && SecondarySchoolName.invalid && SecondarySchoolName.touched">
+                        <div class="text-danger">Invalid SSLC Name format</div>
+                    </div>
+                </div>
+
+                <!-- 10th Mark -->
+                <div class="col-md-12">
+                    <label for="mark2" class="form-label">Sslc mark</label>
+                    <input type="text" id="mark2" class="form-control" formControlName="SecondarySchoolMark" />
+                    <div *ngIf="SecondarySchoolMark && SecondarySchoolMark.invalid && SecondarySchoolMark.touched">
+                        <div class="text-danger">Invalid SSLC Mark Format</div>
+                    </div>
+                </div>
+
+                <!-- Community Certificate -->
+                <div class="col-md-12">
+                    <label for="file" class="form-label">Community certificate</label><br />
+                    <input type="hidden" formControlName="CommunityCertificate" />
+                    <input type="file" id="file" name="file" (change)="onloadcert($event)" accept=".pdf">
+                </div>
+
+                <!-- Photo -->
+                <div class="col-md-12">
+                    <label for="file1" class="form-label">Photo</label><br />
+                    <input type="hidden" formControlName="Photo" />
+                    <span class="error" id="errorphoto"></span>
+                    <input type="file" id="file1" name="file" (change)="onload($event)" accept=".jpg,.jpeg,.png">
+                </div>
+
+                <div class="col-md-12">
+                    <button type="submit" [disabled]="!Applyuser.valid" class="btn btn-primary btn-block">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</div>

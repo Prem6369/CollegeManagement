@@ -1,0 +1,80 @@
+<div class="addadmin">
+<div class="container form ">
+    <div class="card">
+        <div class="card-header head">
+            <h3 class="text-center">Add Admin</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="addadmin" (ngSubmit)="admin()">
+                <div><span class="text-center error">{{message}}</span></div>
+                <div class="form-row">
+                    <div class="form-group ">
+                        <label for="inputFirstName">First Name</label>
+                        <input type="text" class="form-control" formControlName="firstName">
+
+                        <div *ngIf="firstName && firstName.invalid && firstName.touched">
+                            <div class="text-danger">Invalid firstname format</div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLastName">Last Name</label>
+                        <input type="text" class="form-control" formControlName="lastName">
+
+                        <div *ngIf="lastName && lastName.invalid && lastName.touched">
+                            <div class="text-danger">Invalid lastname format</div>
+                        </div>
+
+                        <span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputGender">Gender</label>
+                    <select class="form-control" formControlName="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="inputPhoneNumber">Phone Number</label>
+                    <input type="tel" class="form-control" formControlName="PhoneNumber">
+
+                    <div *ngIf="PhoneNumber && PhoneNumber.invalid && PhoneNumber.touched">
+                        <div class="text-danger">Invalid Phonenumber format</div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Address</label>
+                    <textarea class="form-control" formControlName="address"></textarea>
+
+                    <div *ngIf="address && address.invalid && address.touched">
+                        <div class="text-danger">Invalid address format</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" formControlName="email">
+
+                    <div *ngIf="email && email.invalid && email.touched">
+                        <div class="text-danger">Invalid email format</div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" class="form-control" formControlName="password">
+
+                    <div *ngIf="password && password.invalid && password.touched">
+                        <div class="text-danger">Invalid Password format</div>
+                    </div>
+
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Add</button>
+               
+            </form>
+        </div>
+    </div>
+</div>
+</div>

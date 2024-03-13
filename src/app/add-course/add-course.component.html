@@ -1,0 +1,74 @@
+<div class="addug">
+<div class="container form ">
+    <div class="card">
+        <div class="card-header head">
+            <h3 class="text-center">Add Course</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="course" (ngSubmit)="Addcourse()">
+                <div><span class="text-center error">{{message}}</span></div>
+                <div class="form-row">
+                    <div class="form-group ">
+                        <label for="inputFirstName">Program</label>
+                        <input type="text" class="form-control" formControlName="program">
+
+                        <div *ngIf="program && program.invalid && program.touched">
+                            <div class="text-danger">Invalid firstname format</div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLastName">Course id</label>
+                        <input type="text" class="form-control" formControlName="courseid">
+
+                        <div *ngIf="courseid && courseid.invalid && courseid.touched">
+                            <div class="text-danger">Invalid courseid format</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPhoneNumber">Course name</label>
+                    <input type="tel" class="form-control" formControlName="coursename">
+
+                    <div *ngIf="coursename && coursename.invalid && coursename.touched">
+                        <div class="text-danger">Invalid coursename format</div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="inputAddress">Description</label>
+                    <input class="form-control" formControlName="description">
+
+                    <div *ngIf="description && description.invalid && description.touched">
+                        <div class="text-danger">Invalid description format</div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="inputGender">Duration</label>
+                    <select class="form-control" formControlName="duration">
+                        <option value="2 Year">2 Year</option>
+                        <option value="3 Year">3 Year</option>
+                        <option value="4 Year">4 Year</option>
+                    </select>
+
+                    <div *ngIf="duration && duration.invalid && duration.touched">
+                        <div class="text-danger">Invalid duration format</div>
+                    </div>
+
+                </div>
+                <!-- <div class="form-group">
+                    <label for="inputAddress">Avalableseat </label>
+                    <input class="form-control" formControlName="description">
+                </div> -->
+                <button type="submit" [disabled]="!course.valid" class="btn btn-primary btn-block">Add</button>
+               
+            </form>
+        </div>
+    </div>
+</div>
+<p>
+    <a routerLink="/Uglist" class="btn btn-primary">Back to course</a>
+</p>
+</div>

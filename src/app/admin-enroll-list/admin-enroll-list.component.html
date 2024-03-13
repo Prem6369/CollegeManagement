@@ -1,0 +1,53 @@
+<!-- admin-enroll-list.component.html -->
+
+<h4 class="text-center">Student Details</h4>
+<p>
+  <a routerLink="/AddAdmin" class="btn btn-primary">Enroll List</a>
+</p>
+<div class="table-responsive">
+  <div class="container">
+    <table class="table table-bordered table-striped">
+      <thead class="text-center">
+        <tr>
+          <th>First name</th>
+          <th>Last name</th>
+          <th>Gender</th>
+          <th>Email</th>
+          <th>Hsc</th>
+          <th>High school group</th>
+          <th>Hsc mark</th>
+          <th>Secondary school name</th>
+          <th>Secondary school mark</th>
+          <th>Community certificate</th>
+          <th>Photo</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody class="text-center">
+        <tr *ngFor="let list of studentLists">
+          <td><span>{{list.FirstName}}</span></td>
+          <td><span>{{list.LastName}}</span></td>
+          <td><span>{{list.Gender}}</span></td>
+          <td><span>{{list.Email}}</span></td>
+          <td><span>{{list.HighSchoolName}}</span></td>
+          <td><span>{{list.HighSchoolGroup}}</span></td>
+          <td><span>{{list.HighSchoolMark}}</span></td>
+          <td><span>{{list.SecondarySchoolName}}</span></td>
+          <td><span>{{list.SecondarySchoolMark}}</span></td>
+          <td><span><a [href]="list.CommunityCertificate" target="_blank">View Certificate</a></span></td>
+          <td><span>
+            <img [src]="list.Photo" alt="Student photo" height="100" width="100">
+          </span></td>
+          <td>
+            <select [(ngModel)]="list.Status" name="status" class="status-dropdown" (change)="onStatusChange(list)">
+              <option value="1">Waiting</option>
+              <option value="2">Confirm</option>
+              <option value="3">Rejected</option>
+            </select>
+          </td>
+          <input type="hidden" class="itemid" [value]="list.id" />
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+
+<h4 class="text-center feed">Feedback List</h4>
+<div class="space">
+
+</div>
+<div class="container">
+    <table class="table table-bordered table-striped">
+        <thead class="text-center">
+            <tr>
+                <th>Full name</th>
+                <th>Email</th>
+                <th>Phone number</th>
+                <th>Message</th>
+
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr *ngFor="let contact of data">
+                <td><span>{{contact.name}}</span></td>
+                <td><span>{{contact.email}}</span></td>
+                <td><span>{{contact.phonenumber}}</span></td>
+                <td><span>{{contact.message}}</span></td>
+                
+                  
+            </tr>
+        </tbody>
+    </table>
+</div>

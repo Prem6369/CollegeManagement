@@ -1,0 +1,43 @@
+.mySlides{
+    width: 80%;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+.home{
+    display: flex;
+    justify-content:space-between;
+}
+.paragraph{
+    display: flex; /* Add this line to make the .log a flex container */
+    align-items:center;
+    text-align: justify;
+    padding-right: 50px;
+    
+}
+.paragraph1{
+    text-align: justify;
+    padding: 50px;
+}
+.my{
+    width: 99%;
+    padding-top: 20px;
+}
+.firstimage{
+    display: flex; /* Add this line to make the .log a flex container */
+    justify-content:space-between;
+}
+.secondimage{
+    display: flex; /* Add this line to make the .log a flex container */
+    align-items:center;
+}
+.head{
+    font-family: 'Times New Roman', Times, serif;
+    color:#1d1160;
+    padding-left: 30px;
+    font-weight: 600;
+}
+.sessionname{
+    color: rgb(17, 123, 209);
+    font-size: 20px;
+}

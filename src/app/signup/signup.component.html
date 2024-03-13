@@ -1,0 +1,130 @@
+<div class="signup">
+<div class="container form ">
+    <div class="card">
+        <div class="card-header head">
+            <h3 class="text-center">Sign up</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="Register" (ngSubmit)="Signup()">
+                <div><span class="text-center error">{{message}}</span></div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="inputFirstName">First name</label>
+                        <input type="text" class="form-control" formControlName="firstname">
+
+                        <div *ngIf="firstname && firstname.invalid && firstname.touched">
+                            <div class="text-danger">enter vaild firstName</div>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="inputLastName">Last name</label>
+                        <input type="text" class="form-control" formControlName="lastname">
+
+                        <div *ngIf="lastname && lastname.invalid && lastname.touched">
+                            <div class="text-danger">Invalid lastName format</div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="inputDateOfBirth">Date of birth</label>
+                        <input type="date" class="form-control" id="DateOfBirth" max="2003-06-01" (change)="calculateAge()" formControlName="DateOfBirth">
+                        
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAge">Age</label>
+                        <input type="text" class="form-control" formControlName="age">
+                        <div *ngIf="age && age.invalid && age.touched">
+                            <div class="text-danger">Age is requried</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <div>
+                          <div class="form-check form-check-inline">
+                            <input type="radio" id="maleRadio" class="form-check-input" value="Male" formControlName="gender">
+                            <label class="form-check-label" for="maleRadio">Male</label>
+                          </div>
+                          
+                          <div class="form-check form-check-inline">
+                            <input type="radio" id="femaleRadio" class="form-check-input" value="Female" formControlName="gender">
+                            <label class="form-check-label" for="femaleRadio">Female</label>
+                          </div>
+
+                          <div class="form-check form-check-inline">
+                            <input type="radio" id="otherRadio" class="form-check-input" value="other" formControlName="gender">
+                            <label class="form-check-label" for="otherRadio">Other</label>
+                          </div>
+                        </div>
+                        <div *ngIf="gender && gender.invalid && gender.touched">
+                            <div class="text-danger">gender is requried</div>
+                        </div>
+                      </div>
+                      
+                    <div class="form-group">
+                        <label for="inputPhoneNumber">Phone number</label>
+                        <input type="tel" class="form-control" formControlName="phonenumber">
+
+                        <div *ngIf="phonenumber && phonenumber.invalid && phonenumber.touched">
+                            <div class="text-danger">Invalid phoneNumber format</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPhoneNumber">Address</label>
+                        <textarea type="text" class="form-control" formControlName="address"></textarea>
+                        <div *ngIf="address && address.invalid && address.touched">
+                            <div class="text-danger">Invalid address format</div>
+                        </div>
+                    </div>
+
+                    <div class="formGroup">
+                        <label for="state">State</label>
+                        <select formControlName="state" class="form-control" (change)="onStateChange($event)">
+                          <option value="">Select State</option>
+                          <option value="Tamil Nadu">Tamil Nadu</option>
+                          <option value="Karnataka">Karnataka</option>
+                          <option value="Kerala">Kerala</option>
+                        </select>
+                        <div class="text-danger" *ngIf="state && state.invalid && state.touched">Must select state</div>
+                      </div>
+                   
+                      <div class="formGroup">
+                        <label for="city">City</label>
+                        <select formControlName="city" class="form-control">
+                          <option value="">Select City</option>
+                          <option *ngFor="let city of cityOptions" [value]="city">{{ city }}</option>
+                        </select>
+                        <div *ngIf="city && city.invalid && city.touched">
+                            <div class="text-danger">city is requried</div>
+                        </div>
+                      </div>
+                    <div class="form-group">
+                        <label for="inputPhoneNumber">Email</label>
+                        <input type="email" class="form-control" formControlName="email">
+
+                        <div *ngIf="email && email.invalid && email.touched">
+                            <div class="text-danger">Invalid email format</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputPhoneNumber">Password</label>
+                        <input type="password" class="form-control" formControlName="password">
+
+                        <div *ngIf="password && password.invalid && password.touched">
+                            <div class="text-danger">Invalid password format</div>
+                        </div>                    
+                    </div>
+
+                </div>
+              
+                <button type="submit" [disabled]="!Register.valid" class="btn btn-primary btn-block">Sign up</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
